@@ -11,6 +11,7 @@
     "@apollo/client": "^3.5.10",
     "@quasar/extras": "^1.13.5",
     "@vue/apollo-composable": "^4.0.0-alpha.16",
+    "@vue/apollo-util": "^4.0.0-alpha.16",
     "graphql": "^16.3.0",
     "graphql-tag": "^2.12.6",
     "quasar": "^2.6.6",
