@@ -77,15 +77,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 
-export default {
-  setup () {
-    return {
-      tab: ref('presentation'),
-      splitterModel: ref(20)
-    }
-  }
-}
+const tab = ref('presentation')
+const splitterModel = ref(20)
+      
 </script>
