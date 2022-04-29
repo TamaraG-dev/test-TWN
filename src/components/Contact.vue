@@ -14,6 +14,9 @@
       <q-btn color="warning" @click="deleteContact()">
         Delete<br>last
       </q-btn>
+      <q-btn color="warning" @click="refetch()">
+        refetch
+      </q-btn>
     </div>
   </div>
 
@@ -60,7 +63,7 @@ const rows = useResult(result, null, data => data.TestTable)
 // cf :  https://v4.apollo.vuejs.org/api/use-mutation.html#parameters
 // ce qui donne : 
 
-const { mutate: sendContact } = useMutation(gql`
+const { mutate: sendContact, onDone } = useMutation(gql`
   mutation INSERT_ONE_USER ($Name: String, $Phone: numeric, $email: String) { 
     insert_TestTable_one(object: {Name: $Name, Phone: $Phone, email: $email}) {
       id
@@ -93,6 +96,10 @@ const { mutate: deleteId } = useMutation(gql`
       }
     }`
   )
+
+onDone(() => {
+  refetch()
+})
 
 
 </script>
